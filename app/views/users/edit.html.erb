@@ -1,0 +1,9 @@
+<%= form_tag("/users/#{@users.id}/update") do %>
+    <% @users.errors.full_messages.each do |message| %>
+        <%= message %>
+    <% end %><br>
+    名前　<input name="name" value="<%= @users.name %>"><br>
+    メールアドレス　<input name="email" value="<%= @users.email %>"><br>
+    パスワード　<input name="password" type="password"><br><br>
+    <input type="submit" value="ぽち">
+<% end %>

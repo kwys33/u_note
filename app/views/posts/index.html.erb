@@ -1,0 +1,36 @@
+
+<%= form_tag("/posts/create") do %>
+    <div class=form>
+        日付<input name="date" type="text" id="datepicker" placeholder="日付を選択してください" autocomplete="off">
+        いつ<select name="when">
+        <option value="朝食">朝食</option>
+        <option value="昼食">昼食</option>
+        <option value="夕食">夕食</option>
+        </select>
+        何食った<textarea name="memo"></textarea>
+        <input type="submit" value="ぽち" >
+    </div>
+<% end %>
+
+
+<% @posts.each do |post| %>
+    <div class=result>
+        <%= post.date %> <%= post.when %>
+        <br>
+        <%= link_to(post.memo, "/posts/#{post.id}") %>
+            <%= post.user.name %>
+        <br><br>
+    </div>
+<% end %>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://rawgit.com/jquery/jquery-ui/master/ui/i18n/datepicker-ja.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+
+<script>
+    $("#datepicker").datepicker();
+</script>

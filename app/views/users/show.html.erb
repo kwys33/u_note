@@ -1,0 +1,7 @@
+ID <%= @users.id %> <br>
+名前 <%= @users.name %> <br>
+アド <%= @users.email %> <br>
+パス <%= @users.password %> <br>
+
+<%= link_to("編集", "/users/#{@users.id}/edit") %>
+<%= link_to("削除", "/users/#{@users.id}/destroy",{method:"post"}) %> 

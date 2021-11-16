@@ -1,0 +1,20 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+input,textarea,select {
+    border:solid 1px black;
+}
+
+.form {
+    margin-left:10px;
+    margin-bottom:250px;
+}
+
+.result {
+    margin-left:10px;
+    margin-top:10px;
+    border:solid 1px black;
+    width: 60%;
+}
+
