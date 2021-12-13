@@ -1,8 +1,18 @@
+require "json" 
+require "open-uri"
+
 class PostsController < ApplicationController
   before_action :authenticate_user
 
   def index
     @posts = Post.where(user_id: @current_user.id)
+    api_key = "e790cb63ccb9d5a53515a0b22361d69d"
+    base_url = "http://api.openweathermap.org/data/2.5/weather"
+    response = open(base_url + "?zip=195-0062,jp&APPID=#{api_key}")
+    results = JSON.parse(response.read)
+      puts results ["weather"][0]["main"]
+
+
   end
 
   def show
