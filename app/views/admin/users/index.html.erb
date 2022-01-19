@@ -1,0 +1,5 @@
+ユーザー一覧<br><br>
+
+<% @users.each do |user| %>
+        <%= link_to(user.name, "/admin/users/#{user.id}") %><br>
+<% end %>

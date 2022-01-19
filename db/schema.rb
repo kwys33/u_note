@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_07_111431) do
+ActiveRecord::Schema.define(version: 2022_01_19_120043) do
 
   create_table "posts", force: :cascade do |t|
     t.text "memo"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2022_01_07_111431) do
     t.datetime "updated_at", null: false
     t.string "password"
     t.string "postalcode"
+    t.boolean "admin", default: false
   end
 
 end

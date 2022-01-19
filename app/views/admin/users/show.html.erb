@@ -5,5 +5,5 @@ ID <%= @users.id %> <br>
 パス <%= @users.password %> <br>
 管理 <%= @users.admin %> <br>
 
-<%= link_to("編集", "/users/#{@users.id}/edit") %>
-<%= link_to("削除", "/users/#{@users.id}/destroy",{method:"post"}) %> 
+<%= link_to("編集", "/admin/users/#{@users.id}/edit") %>
+<%= link_to("削除", "/admin/users/#{@users.id}/destroy",{method:"post"}) %> 

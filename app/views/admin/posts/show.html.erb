@@ -1,0 +1,6 @@
+<%= @posts.memo %> <br>
+<%= @posts.created_at %> <br>
+<%= @posts.id %> <br>
+<%= link_to("編集", "/admin/posts/#{@posts.id}/edit") %>
+<%= link_to("削除", "/admin/posts/#{@posts.id}/destroy",{method:"post"}) %> 
+

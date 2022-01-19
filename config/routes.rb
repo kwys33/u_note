@@ -25,7 +25,21 @@ Rails.application.routes.draw do
 
   get "/" => "home#top"
   get "signup" => "users#new"
-  
+
+
+  get "admin" => "admin#index"
+  get "admin/posts/index" => "admin/posts#index"
+  post "admin/posts/:id/update" => "admin/posts#update"
+  post "admin/posts/:id/destroy" => "admin/posts#destroy"
+
+  get "admin/users/index" => "admin/users#index"
+  post "admin/users/:id/update" => "admin/users#update"
+  post "admin/users/:id/destroy" => "admin/users#destroy"
+
+  namespace :admin do
+    resources :users
+    resources :posts
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

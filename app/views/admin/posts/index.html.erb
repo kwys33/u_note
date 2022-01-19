@@ -1,0 +1,14 @@
+投稿一覧<br>
+<% @posts.each do |post| %>
+    <div class=result>
+        <%= post.date %> <%= post.when %> <%= post.weather %> 
+        <br>
+        <%= link_to(post.memo, "/admin/posts/#{post.id}") %>
+            <%= post.user.name %>
+
+    </div>
+<% end %>
+
+
+
+
