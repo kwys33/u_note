@@ -1,6 +1,7 @@
 <%= form_tag("/users/create") do %>
     名前<input name="name" value="<%= @users.name %>"><br>
     メールアドレス<input name="email" value="<%= @users.email %>"><br>
+    郵便番号 <input name="postalcode" value="<%= @users.postalcode %>"> ※xxx-xxxxって書け<br> 
     パスワード<input name="password" type="password" value="<%= @users.password %>"><br>
     <input type="submit" value="ぽち">
 <% end %>

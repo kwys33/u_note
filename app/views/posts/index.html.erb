@@ -7,7 +7,8 @@
         <option value="昼食">昼食</option>
         <option value="夕食">夕食</option>
         </select>
-        何食った<textarea name="memo"></textarea>
+        何食った<textarea name="memo"></textarea><br>
+        郵便番号<input name="postalcode1"> <input name="postalcode2">
         <input type="submit" value="ぽち" >
     </div>
 <% end %>
@@ -15,7 +16,7 @@
 
 <% @posts.each do |post| %>
     <div class=result>
-        <%= post.date %> <%= post.when %>
+        <%= post.date %> <%= post.when %> <%= post.weather %> 
         <br>
         <%= link_to(post.memo, "/posts/#{post.id}") %>
             <%= post.user.name %>

@@ -1,3 +1,6 @@
+require "json" 
+require "open-uri"
+
 class UsersController < ApplicationController
   before_action :authenticate_user, {only: [:index, :show, :edit, :update]}
   before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
@@ -8,13 +11,13 @@ class UsersController < ApplicationController
 
   def new
     @users = User.new
-    
   end
 
   def create
     @users = User.new(
       name: params[:name],
       email: params[:email],
+      postalcode: params[:postalcode],
       password: params[:password]
     )
 
@@ -23,6 +26,7 @@ class UsersController < ApplicationController
       flash[:notice] = "登録しました"
       redirect_to("/users/#{@users.id}")
     else
+      flash[:notice] = "何か失敗してます"
       render("users/new")
     end
   end
@@ -39,6 +43,7 @@ class UsersController < ApplicationController
     @users = User.find_by(id:params[:id])
     @users.name = params[:name]
     @users.email = params[:email]
+    @users.postalcode = params[:postalcode]
     @users.password = params[:password]
     if @users.save
       flash[:notice] = "編集しました"
